@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Boys' Higher Secondary School Mithiani, Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Abril+Fatface&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:      #1A6B3C;
+  --green-mid:  #228B4E;
+  --green-light:#2EAD62;
+  --green-pale: #E6F5ED;
+  --gold:       #E8A020;
+  --gold-light: #F5C84A;
+  --white:      #FDFAF4;
+  --off:        #F4F0E6;
+  --dark:       #0E2718;
+  --ink:        #1C3A28;
+  --muted:      #6B8C76;
+  --sky:        #D6EEF8;
+  --red:        #C0392B;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--green);
+  color: #fff;
+  padding: 0.5rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 200;
+}
+.ticker {
+  display: flex;
+  white-space: nowrap;
+  animation: tickerScroll 28s linear infinite;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  gap: 3rem;
+}
+.ticker span { padding-right: 3rem; }
+.ticker strong { color: var(--gold-light); }
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 3px solid var(--green);
+  display: flex; align-items: center;
+  padding: 0 3rem;
+  height: 70px;
+  box-shadow: 0 2px 20px rgba(26,107,60,0.1);
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 0.9rem;
+  flex: 1;
+}
+.nav-crest {
+  width: 44px; height: 44px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-crest svg { width: 26px; height: 26px; }
+.nav-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+.nav-name span {
+  display: block;
+  font-size: 0.7rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex; gap: 0; list-style: none;
+}
+.nav-links a {
+  display: block;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: 0; left: 1.1rem; right: 1.1rem;
+  height: 2px; background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-apply {
+  background: var(--gold);
+  color: var(--dark) !important;
+  padding: 0.5rem 1.4rem !important;
+  font-weight: 600 !important;
+  border-radius: 2px;
+  margin-left: 1rem;
+}
+.nav-apply:hover { background: var(--gold-light); }
+.nav-apply::after { display: none !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 92vh;
+  background: var(--dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+/* Animated geometric background */
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at -10% 50%, rgba(46,173,98,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 110% 20%, rgba(232,160,32,0.12) 0%, transparent 55%),
+    linear-gradient(150deg, #0E2718 0%, #1A3D25 50%, #0D2015 100%);
+}
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(46,173,98,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,173,98,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.hero-left {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(232,160,32,0.15);
+  border: 1px solid rgba(232,160,32,0.35);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  margin-bottom: 1.8rem;
+  width: fit-content;
+  animation: fadeSlide 0.8s 0.1s ease both;
+}
+.hero-badge::before { content: '✦'; font-size: 0.6rem; }
+
+h1.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  animation: fadeSlide 0.8s 0.2s ease both;
+}
+h1.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+  display: block;
+}
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 460px;
+  margin-bottom: 2.5rem;
+  animation: fadeSlide 0.8s 0.35s ease both;
+}
+.hero-ctas {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeSlide 0.8s 0.5s ease both;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border: none; cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.btn-outline:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+.hero-stats {
+  display: flex; gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: fadeSlide 0.8s 0.65s ease both;
+}
+.h-stat-num {
+  font-family: 'Abril Fatface', serif;
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  display: block; line-height: 1;
+}
+.h-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  padding: 4rem 4rem 4rem 2rem;
+}
+.hero-illustration {
+  position: relative;
+  width: 100%; max-width: 460px;
+}
+/* School building illustration in SVG */
+.building-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(46,173,98,0.2);
+  border-radius: 8px;
+  padding: 2.5rem;
+  backdrop-filter: blur(4px);
+  animation: fadeSlide 1s 0.4s ease both;
+}
+.floating-card {
+  position: absolute;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  animation: float 4s ease-in-out infinite;
+}
+.floating-card.c1 {
+  bottom: -20px; left: -20px;
+  animation-delay: 0s;
+}
+.floating-card.c2 {
+  top: -15px; right: -15px;
+  animation-delay: 2s;
+}
+.fc-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.fc-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── MARQUEE STRIP ── */
+.strip {
+  background: var(--gold);
+  padding: 0.75rem 0;
+  overflow: hidden;
+}
+.strip-inner {
+  display: flex;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+  gap: 4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--dark);
+  font-weight: 700;
+}
+.strip-inner span { padding-right: 4rem; }
+.strip-dot { color: var(--green); margin-right: 4rem; font-style: normal; }
+
+/* ── ABOUT ── */
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--off);
+}
+.about-img-panel {
+  background: var(--green);
+  position: relative; overflow: hidden;
+  min-height: 560px;
+  display: flex; align-items: center; justify-content: center;
+}
+.about-geo {
+  position: absolute; inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white'%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3Ccircle cx='40' cy='40' r='20' fill='none' stroke='white' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='38' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+.school-svg-art {
+  position: relative; z-index: 2; padding: 2rem;
+}
+.about-text {
+  padding: 5rem 4.5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 0.8rem;
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+h2 em { color: var(--green); font-style: italic; }
+.about-text p {
+  color: #4a6155;
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+}
+.pillars {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 2rem;
+}
+.pillar {
+  background: var(--white);
+  border-left: 3px solid var(--green-light);
+  padding: 1rem 1.2rem;
+  border-radius: 0 4px 4px 0;
+}
+.pillar-icon { font-size: 1.4rem; margin-bottom: 0.4rem; display: block; }
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--dark);
+}
+.pillar-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* ── SUBJECTS / PROGRAMS ── */
+.programs {
+  padding: 6rem 4rem;
+  background: var(--white);
+  text-align: center;
+}
+.programs > .eyebrow { display: block; margin-bottom: 0.6rem; }
+.programs > h2 { margin-bottom: 0.6rem; }
+.programs-sub {
+  color: var(--muted); font-size: 1rem; font-style: italic;
+  margin-bottom: 3.5rem;
+}
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px; margin: 0 auto;
+}
+.prog-card {
+  background: var(--off);
+  border-radius: 8px;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+  border-bottom: 3px solid transparent;
+}
+.prog-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(26,107,60,0.04), transparent);
+}
+.prog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(26,107,60,0.12);
+  border-bottom-color: var(--green-light);
+}
+.prog-emoji { font-size: 2.6rem; display: block; margin-bottom: 1rem; }
+.prog-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.6rem;
+}
+.prog-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+.prog-tag {
+  display: inline-block; margin-top: 1rem;
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  background: var(--green-pale);
+  color: var(--green);
+  border-radius: 2px;
+}
+
+/* ── FEATURES / WHY US ── */
+.features {
+  background: var(--dark);
+  padding: 6rem 4rem;
+  position: relative; overflow: hidden;
+}
+.features::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,173,98,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.features-header { text-align: center; margin-bottom: 4rem; }
+.features-header h2 { color: #fff; }
+.features-header .eyebrow { color: var(--gold-light); }
+.feat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.06);
+  max-width: 1100px; margin: 0 auto;
+}
+.feat-item {
+  background: rgba(255,255,255,0.02);
+  padding: 2.8rem 2.5rem;
+  transition: background 0.3s;
+  position: relative;
+}
+.feat-item:hover { background: rgba(46,173,98,0.06); }
+.feat-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--green-light);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s;
+}
+.feat-item:hover::before { transform: scaleX(1); }
+.feat-num {
+  font-family: 'Abril Fatface', serif;
+  font-size: 3rem; color: rgba(46,173,98,0.2);
+  display: block; line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.feat-icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
+.feat-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: #fff; margin-bottom: 0.7rem;
+}
+.feat-item p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* ── SCHEDULE / TIMETABLE ── */
+.schedule {
+  padding: 6rem 4rem;
+  background: var(--green-pale);
+}
+.schedule-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem;
+  align-items: center;
+}
+.schedule-text p { color: #4a6155; line-height: 1.8; margin-top: 1rem; }
+.timetable {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(26,107,60,0.1);
+}
+.tt-header {
+  background: var(--green);
+  padding: 1.2rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.tt-header h4 {
+  font-family: 'Playfair Display', serif;
+  color: #fff; font-size: 1rem;
+}
+.tt-badge {
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 2px;
+}
+.tt-row {
+  display: grid; grid-template-columns: 1fr 2fr 1fr;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--off);
+  align-items: center;
+  transition: background 0.2s;
+}
+.tt-row:last-child { border-bottom: none; }
+.tt-row:hover { background: var(--off); }
+.tt-time { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+.tt-subject { font-weight: 500; color: var(--dark); font-size: 0.95rem; }
+.tt-tag {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 0.15rem 0.6rem; border-radius: 20px;
+  width: fit-content; margin-left: auto;
+}
+.tt-tag.science { background: #EBF5FB; color: #1A6B9B; }
+.tt-tag.math    { background: #EBF5EC; color: #1A6B3C; }
+.tt-tag.lang    { background: #FDF5E6; color: #B7770D; }
+.tt-tag.social  { background: #F5EBF5; color: #7D3C98; }
+.tt-tag.islamic { background: #FEF9E7; color: #9A7D0A; }
+.tt-tag.urdu    { background: #FDEDEC; color: #C0392B; }
+
+/* ── GALLERY / LIFE AT SCHOOL ── */
+.gallery {
+  padding: 6rem 4rem;
+  background: var(--white);
+  text-align: center;
+}
+.gallery > .eyebrow { display: block; margin-bottom: 0.6rem; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 12px;
+  max-width: 1100px; margin: 3rem auto 0;
+}
+.gal-item {
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  transition: transform 0.3s;
+}
+.gal-item:hover { transform: scale(1.02); z-index: 2; }
+.gal-item.span2 { grid-row: span 2; }
+.gal-item .gal-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(14,39,24,0.85), transparent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1.5rem 1rem 0.8rem;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+.gal-item:nth-child(1) { background: linear-gradient(135deg, #1A3D25, #2EAD62); }
+.gal-item:nth-child(2) { background: linear-gradient(135deg, #1A4066, #2E7DAD); }
+.gal-item:nth-child(3) { background: linear-gradient(135deg, #663300, #C07020); }
+.gal-item:nth-child(4) { background: linear-gradient(135deg, #3D1A1A, #AD2E2E); }
+.gal-item:nth-child(5) { background: linear-gradient(135deg, #1A3D35, #2EAD98); }
+
+/* ── ANNOUNCEMENTS / NEWS ── */
+.news {
+  background: var(--off);
+  padding: 6rem 4rem;
+}
+.news-inner { max-width: 1100px; margin: 0 auto; }
+.news-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem;
+}
+.news-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.news-card {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.news-card:hover {
+  box-shadow: 0 12px 35px rgba(26,107,60,0.12);
+  transform: translateY(-4px);
+}
+.news-top {
+  background: var(--green);
+  padding: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.news-date {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.8rem; color: #fff; line-height: 1;
+}
+.news-month {
+  font-size: 0.7rem; color: rgba(255,255,255,0.6);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-top: 0.1rem;
+}
+.news-cat {
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem; border-radius: 2px;
+}
+.news-body { padding: 1.5rem; }
+.news-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--dark); margin-bottom: 0.6rem; line-height: 1.3;
+}
+.news-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+/* ── HOURS / CONTACT ── */
+.contact {
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.contact-map {
+  background: var(--green);
+  padding: 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.contact-map::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(255,255,255,0.04)'%3E%3Crect x='0' y='0' width='30' height='30'/%3E%3Crect x='30' y='30' width='30' height='30'/%3E%3C/g%3E%3C/svg%3E");
+}
+.contact-map h2 { color: #fff; margin-bottom: 1.5rem; }
+.contact-map .eyebrow { color: var(--gold-light); }
+.info-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.info-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.info-label {
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-bottom: 0.2rem;
+}
+.info-val { color: #fff; font-size: 0.95rem; line-height: 1.5; }
+.map-btn {
+  margin-top: 2rem; position: relative; z-index: 1;
+  display: inline-block;
+}
+
+.contact-hours {
+  background: var(--dark);
+  padding: 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.contact-hours h2 { color: #fff; margin-bottom: 0.5rem; }
+.contact-hours .eyebrow { color: var(--gold-light); }
+.hours-table { margin-top: 2rem; }
+.hr-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hr-row:last-child { border-bottom: none; }
+.hr-day {
+  font-size: 0.85rem; color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+.hr-time { font-size: 0.85rem; color: var(--green-light); font-weight: 600; }
+.hr-row.today .hr-day { color: #fff; font-weight: 600; }
+.hr-row.today .hr-time { color: var(--gold-light); }
+.closed { color: rgba(255,255,255,0.3) !important; }
+.today-badge {
+  font-size: 0.6rem; font-weight: 700;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 0.1rem 0.5rem; border-radius: 2px;
+  margin-left: 0.5rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ── MOTTO STRIP ── */
+.motto {
+  background: var(--gold);
+  padding: 4rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.motto::before, .motto::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.motto::before { top: -150px; left: -100px; }
+.motto::after  { bottom: -150px; right: -100px; }
+.motto-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--dark);
+  max-width: 800px; margin: 0 auto;
+  position: relative; z-index: 1;
+  line-height: 1.4;
+}
+.motto-attr {
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(14,39,24,0.6);
+  margin-top: 1.2rem; display: block;
+  position: relative; z-index: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  padding: 4rem 4rem 2rem;
+  border-top: 3px solid var(--green);
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
+.footer-col h4 {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a {
+  font-size: 0.85rem; color: rgba(255,255,255,0.45);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--green-light); }
+.footer-bottom {
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+.footer-govt {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: rgba(255,255,255,0.3);
+}
+.gov-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal { opacity: 0; transform: translateY(36px); transition: all 0.75s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── PRINCIPAL CARD ── */
+.principal-card {
+  display: flex; align-items: center; gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid rgba(26,107,60,0.15);
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(26,107,60,0.07);
+  transition: box-shadow 0.3s;
+}
+.principal-card:hover { box-shadow: 0 8px 32px rgba(26,107,60,0.13); }
+.principal-avatar {
+  width: 58px; height: 58px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(26,107,60,0.25);
+}
+.principal-info { flex: 1; }
+.principal-role {
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green-light); margin-bottom: 0.3rem;
+}
+.principal-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--dark); line-height: 1.2;
+}
+.principal-school {
+  font-size: 0.78rem; color: var(--muted);
+  margin-top: 0.2rem;
+}
+.principal-badge {
+  background: var(--green-pale);
+  color: var(--green);
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.7rem; border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Hero principal pill */
+.hero-principal {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(232,160,32,0.25);
+  border-radius: 40px;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  margin-bottom: 1.6rem;
+  animation: fadeSlide 0.8s 0.05s ease both;
+  width: fit-content;
+}
+.hp-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.hp-text { line-height: 1.2; }
+.hp-role {
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-light); opacity: 0.8;
+}
+.hp-name {
+  font-size: 0.82rem; font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 6rem 2rem 4rem; }
+  .about { grid-template-columns: 1fr; }
+  .about-img-panel { min-height: 280px; }
+  .about-text { padding: 3.5rem 2rem; }
+  .prog-grid { grid-template-columns: 1fr 1fr; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .schedule-inner { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal-item.span2 { grid-row: auto; }
+  .news-grid { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .contact-map, .contact-hours { padding: 3rem 2rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .programs, .features, .schedule, .gallery, .news { padding: 4rem 2rem; }
+  footer { padding: 3rem 2rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>👨‍💼 <strong>Senior Principal:</strong> Mr. Shafiq-u-Rehman Dangrach — Leading with vision and dedication</span>
+    <span>📢 <strong>Annual Examinations:</strong> Starting 15th June 2026 — All students must carry their Admit Cards</span>
+    <span>🏆 <strong>Sports Day:</strong> Annual Athletics Meet on 20th June — Registrations Open Now</span>
+    <span>📚 <strong>New Session 2026–27:</strong> Admissions open for Class 6 through Class 10 — Contact Administration</span>
+    <span>🎉 <strong>Result Announcement:</strong> Class 10 Board Results expected by July 2026 — Congratulations to all students</span>
+    <span>👨‍💼 <strong>Senior Principal:</strong> Mr. Shafiq-u-Rehman Dangrach — Leading with vision and dedication</span>
+    <span>📢 <strong>Annual Examinations:</strong> Starting 15th June 2026 — All students must carry their Admit Cards</span>
+    <span>🏆 <strong>Sports Day:</strong> Annual Athletics Meet on 20th June — Registrations Open Now</span>
+    <span>📚 <strong>New Session 2026–27:</strong> Admissions open for Class 6 through Class 10 — Contact Administration</span>
+    <span>🎉 <strong>Result Announcement:</strong> Class 10 Board Results expected by July 2026 — Congratulations to all students</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="nav-crest">
+      <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2L15.5 9H23L17 13.5L19.5 20.5L13 16L6.5 20.5L9 13.5L3 9H10.5L13 2Z" fill="#E8A020"/>
+        <circle cx="13" cy="13" r="11" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+    <div class="nav-name">
+      Government Boys' Higher Secondary School
+      <span>Mithiani, Campus · Sindh, Pakistan</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Academics</a></li>
+    <li><a href="#features">Facilities</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-apply">Admissions</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-left">
+    <div class="hero-principal">
+      <div class="hp-avatar">👨‍💼</div>
+      <div class="hp-text">
+        <div class="hp-role">Senior Principal</div>
+        <div class="hp-name">Mr. Shafiq-u-Rehman Dangrach</div>
+      </div>
+    </div>
+    <div class="hero-badge">Govt. Recognised · Mithiani, Campus</div>
+    <h1 class="hero-title">
+      Shaping<br>Tomorrow's<br>
+      <em>Leaders</em>
+    </h1>
+    <p class="hero-desc">
+      Government Boys' Higher Secondary School Mithiani, Campus is committed to providing quality education, building character, and nurturing the potential of every student in the heart of Sindh.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-gold">Apply for Admission</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="h-stat-num">10</span>
+        <span class="h-stat-label">Classes Offered</span>
+      </div>
+      <div>
+        <span class="h-stat-num">6</span>
+        <span class="h-stat-label">Days a Week</span>
+      </div>
+      <div>
+        <span class="h-stat-num">100%</span>
+        <span class="h-stat-label">Government Funded</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-illustration">
+      <div class="building-card">
+        <!-- School building illustration -->
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+          <!-- Sky -->
+          <rect width="400" height="300" fill="rgba(0,0,0,0)"/>
+          <!-- Ground -->
+          <rect y="240" width="400" height="60" fill="rgba(46,173,98,0.15)" rx="2"/>
+          <!-- Main building body -->
+          <rect x="60" y="100" width="280" height="145" fill="rgba(46,173,98,0.12)" stroke="rgba(46,173,98,0.4)" stroke-width="1.5"/>
+          <!-- Roof -->
+          <polygon points="50,100 200,40 350,100" fill="rgba(232,160,32,0.15)" stroke="rgba(232,160,32,0.5)" stroke-width="1.5"/>
+          <!-- Flag pole -->
+          <line x1="200" y1="40" x2="200" y2="10" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+          <polygon points="200,10 230,18 200,26" fill="rgba(46,173,98,0.8)"/>
+          <!-- Windows row 1 -->
+          <rect x="90" y="125" width="40" height="35" fill="rgba(100,200,255,0.15)" stroke="rgba(46,173,98,0.35)" stroke-width="1"/>
+          <rect x="180" y="125" width="40" height="35" fill="rgba(100,200,255,0.15)" stroke="rgba(46,173,98,0.35)" stroke-width="1"/>
+          <rect x="270" y="125" width="40" height="35" fill="rgba(100,200,255,0.15)" stroke="rgba(46,173,98,0.35)" stroke-width="1"/>
+          <!-- Windows row 2 -->
+          <rect x="90" y="180" width="40" height="35" fill="rgba(100,200,255,0.1)" stroke="rgba(46,173,98,0.3)" stroke-width="1"/>
+          <rect x="270" y="180" width="40" height="35" fill="rgba(100,200,255,0.1)" stroke="rgba(46,173,98,0.3)" stroke-width="1"/>
+          <!-- Door -->
+          <rect x="165" y="180" width="70" height="65" fill="rgba(232,160,32,0.15)" stroke="rgba(232,160,32,0.4)" stroke-width="1.5" rx="35 35 0 0"/>
+          <!-- Door arch -->
+          <path d="M165 215 Q165 180 200 180 Q235 180 235 215" fill="none" stroke="rgba(232,160,32,0.5)" stroke-width="1"/>
+          <!-- Steps -->
+          <rect x="155" y="240" width="90" height="8" fill="rgba(46,173,98,0.25)" stroke="rgba(46,173,98,0.3)" stroke-width="1"/>
+          <rect x="160" y="233" width="80" height="8" fill="rgba(46,173,98,0.2)" stroke="rgba(46,173,98,0.3)" stroke-width="1"/>
+          <!-- Trees -->
+          <ellipse cx="30" cy="215" rx="22" ry="30" fill="rgba(46,173,98,0.25)"/>
+          <rect x="27" y="238" width="6" height="20" fill="rgba(46,173,98,0.3)"/>
+          <ellipse cx="370" cy="215" rx="22" ry="30" fill="rgba(46,173,98,0.25)"/>
+          <rect x="367" y="238" width="6" height="20" fill="rgba(46,173,98,0.3)"/>
+          <!-- School sign -->
+          <rect x="120" y="70" width="160" height="22" fill="rgba(232,160,32,0.2)" stroke="rgba(232,160,32,0.4)" stroke-width="1" rx="2"/>
+          <text x="200" y="85" text-anchor="middle" font-size="8" fill="rgba(232,160,32,0.8)" font-family="serif" letter-spacing="1">GOVT. BOYS' HIGHER SECONDARY SCHOOL</text>
+          <!-- Cross window details -->
+          <line x1="110" y1="125" x2="110" y2="160" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+          <line x1="90" y1="142" x2="130" y2="142" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+          <line x1="200" y1="125" x2="200" y2="160" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+          <line x1="180" y1="142" x2="220" y2="142" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+          <line x1="290" y1="125" x2="290" y2="160" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+          <line x1="270" y1="142" x2="310" y2="142" stroke="rgba(46,173,98,0.3)" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="floating-card c1">
+        <div class="fc-label">School Hours</div>
+        <div class="fc-val">8:30 AM – 2:30 PM</div>
+      </div>
+      <div class="floating-card c2">
+        <div class="fc-label">Location</div>
+        <div class="fc-val">Mithiani, Sindh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span>Knowledge <span class="strip-dot">✦</span> Character <span class="strip-dot">✦</span> Excellence <span class="strip-dot">✦</span> Discipline <span class="strip-dot">✦</span> Service <span class="strip-dot">✦</span> Progress</span>
+    <span>Knowledge <span class="strip-dot">✦</span> Character <span class="strip-dot">✦</span> Excellence <span class="strip-dot">✦</span> Discipline <span class="strip-dot">✦</span> Service <span class="strip-dot">✦</span> Progress</span>
+    <span>Knowledge <span class="strip-dot">✦</span> Character <span class="strip-dot">✦</span> Excellence <span class="strip-dot">✦</span> Discipline <span class="strip-dot">✦</span> Service <span class="strip-dot">✦</span> Progress</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img-panel">
+    <div class="about-geo"></div>
+    <svg class="school-svg-art" viewBox="0 0 320 380" fill="none" width="320">
+      <!-- Crest / emblem -->
+      <circle cx="160" cy="160" r="140" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <circle cx="160" cy="160" r="110" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+      <circle cx="160" cy="160" r="75" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <!-- Book -->
+      <rect x="105" y="125" width="55" height="70" rx="3" fill="rgba(232,160,32,0.25)" stroke="rgba(232,160,32,0.6)" stroke-width="1.5"/>
+      <rect x="160" y="125" width="55" height="70" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <line x1="160" y1="125" x2="160" y2="195" stroke="rgba(232,160,32,0.5)" stroke-width="2"/>
+      <!-- Lines on pages -->
+      <line x1="115" y1="145" x2="148" y2="145" stroke="rgba(232,160,32,0.4)" stroke-width="1"/>
+      <line x1="115" y1="155" x2="148" y2="155" stroke="rgba(232,160,32,0.4)" stroke-width="1"/>
+      <line x1="115" y1="165" x2="148" y2="165" stroke="rgba(232,160,32,0.4)" stroke-width="1"/>
+      <line x1="170" y1="145" x2="203" y2="145" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      <line x1="170" y1="155" x2="203" y2="155" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      <line x1="170" y1="165" x2="203" y2="165" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      <!-- Torch flame -->
+      <ellipse cx="160" cy="95" rx="12" ry="18" fill="rgba(232,160,32,0.3)" stroke="rgba(232,160,32,0.6)" stroke-width="1.5"/>
+      <ellipse cx="160" cy="95" rx="6" ry="10" fill="rgba(232,160,32,0.5)"/>
+      <rect x="155" y="108" width="10" height="20" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+      <!-- Stars around -->
+      <text x="35" y="100" font-size="14" fill="rgba(232,160,32,0.5)">★</text>
+      <text x="270" y="100" font-size="14" fill="rgba(232,160,32,0.5)">★</text>
+      <text x="35" y="230" font-size="14" fill="rgba(232,160,32,0.5)">★</text>
+      <text x="270" y="230" font-size="14" fill="rgba(232,160,32,0.5)">★</text>
+      <!-- Laurel branches hint -->
+      <path d="M60 200 Q80 170 100 180 Q90 200 70 210Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <path d="M260 200 Q240 170 220 180 Q230 200 250 210Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <!-- Bottom text -->
+      <text x="160" y="230" text-anchor="middle" font-family="serif" font-size="9" letter-spacing="3" fill="rgba(255,255,255,0.4)">MITHIANI · SINDH</text>
+      <!-- Outer decorative ring dots -->
+      <circle cx="160" cy="22" r="3" fill="rgba(232,160,32,0.5)"/>
+      <circle cx="280" cy="88" r="3" fill="rgba(232,160,32,0.4)"/>
+      <circle cx="280" cy="232" r="3" fill="rgba(232,160,32,0.4)"/>
+      <circle cx="40"  cy="88"  r="3" fill="rgba(232,160,32,0.4)"/>
+      <circle cx="40"  cy="232" r="3" fill="rgba(232,160,32,0.4)"/>
+      <circle cx="160" cy="298" r="3" fill="rgba(232,160,32,0.5)"/>
+      <!-- Divider band -->
+      <rect x="70" y="336" width="180" height="2" fill="rgba(232,160,32,0.3)"/>
+      <text x="160" y="360" text-anchor="middle" font-family="serif" font-size="11" letter-spacing="2" fill="rgba(232,160,32,0.7)" font-style="italic">علم ، کردار ، ترقی</text>
+    </svg>
+  </div>
+  <div class="about-text reveal">
+    <div class="eyebrow">About Our School</div>
+    <h2>A Beacon of<br><em>Education</em> in Mithiani</h2>
+    <p>Government Boys' Higher Secondary School Mithiani, Campus proudly serves the community with free, accessible, and quality education from primary through intermediate level. Affiliated with the Board of Secondary Education Sindh, our school has been a cornerstone institution for generations of students across the region.</p>
+    <p>With dedicated faculty, a structured curriculum, and a focus on both academic excellence and moral development, we prepare our students not just for examinations — but for life.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">📖</span>
+        <div class="pillar-title">Academic Excellence</div>
+        <div class="pillar-desc">Strong focus on core subjects and board preparation</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🕌</span>
+        <div class="pillar-title">Islamic Values</div>
+        <div class="pillar-desc">Nurturing faith, discipline and moral character</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🏃</span>
+        <div class="pillar-title">Sports & Health</div>
+        <div class="pillar-desc">Physical fitness and healthy competition</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🤝</span>
+        <div class="pillar-title">Community Service</div>
+        <div class="pillar-desc">Active participation in local development</div>
+      </div>
+    </div>
+    <div class="principal-card">
+      <div class="principal-avatar">👨‍💼</div>
+      <div class="principal-info">
+        <div class="principal-role">Senior Principal</div>
+        <div class="principal-name">Mr. Shafiq-u-Rehman Dangrach</div>
+        <div class="principal-school">Government Boys' Higher Secondary School Mithiani, Campus</div>
+      </div>
+      <span class="principal-badge">Leadership</span>
+    </div>
+  </div>
+</section>
+<section class="programs" id="programs">
+  <span class="eyebrow">Curriculum</span>
+  <h2>Academic <em>Programs</em></h2>
+  <p class="programs-sub">Following the Sindh Textbook Board curriculum — Classes 1 through 10</p>
+  <div class="prog-grid reveal">
+    <div class="prog-card">
+      <span class="prog-emoji">🔬</span>
+      <h3>Science</h3>
+      <p>Physics, Chemistry and Biology taught through theory and practical sessions to build analytical thinking.</p>
+      <span class="prog-tag">Classes 9–10</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">📐</span>
+      <h3>Mathematics</h3>
+      <p>From arithmetic foundations to advanced algebra and geometry, building logical reasoning at every grade.</p>
+      <span class="prog-tag">All Classes</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">🌍</span>
+      <h3>Social Studies</h3>
+      <p>History, Geography and Civics to develop informed, responsible and patriotic citizens of Pakistan.</p>
+      <span class="prog-tag">Classes 6–10</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">📝</span>
+      <h3>Urdu & Sindhi</h3>
+      <p>Developing strong language skills in Urdu and Sindhi — the languages of our culture and heritage.</p>
+      <span class="prog-tag">All Classes</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">🔤</span>
+      <h3>English</h3>
+      <p>Reading, writing, grammar and comprehension to equip students with essential communication skills.</p>
+      <span class="prog-tag">All Classes</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">☪️</span>
+      <h3>Islamiyat</h3>
+      <p>Quranic education, Islamic history and principles guiding students toward righteousness and character.</p>
+      <span class="prog-tag">All Classes</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">💻</span>
+      <h3>Computer Science</h3>
+      <p>Introduction to digital literacy and computing skills essential for the 21st century workforce.</p>
+      <span class="prog-tag">Classes 9–10</span>
+    </div>
+    <div class="prog-card">
+      <span class="prog-emoji">🎨</span>
+      <h3>Arts & Drawing</h3>
+      <p>Creative expression, fine arts and visual skills to nurture imagination alongside intellectual growth.</p>
+      <span class="prog-tag">Classes 1–8</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-header reveal">
+    <span class="eyebrow">Why Choose Us</span>
+    <h2>Our Facilities & Values</h2>
+  </div>
+  <div class="feat-grid reveal">
+    <div class="feat-item">
+      <span class="feat-num">01</span>
+      <span class="feat-icon">🏫</span>
+      <h3>Dedicated Classrooms</h3>
+      <p>Well-maintained classrooms designed for focused learning with adequate space, lighting and ventilation for every student.</p>
+    </div>
+    <div class="feat-item">
+      <span class="feat-num">02</span>
+      <span class="feat-icon">📚</span>
+      <h3>School Library</h3>
+      <p>A growing collection of textbooks, reference materials and reading resources available to all students throughout the academic year.</p>
+    </div>
+    <div class="feat-item">
+      <span class="feat-num">03</span>
+      <span class="feat-icon">🏅</span>
+      <h3>Qualified Teachers</h3>
+      <p>Experienced, government-certified educators committed to delivering quality instruction and mentoring every student.</p>
+    </div>
+    <div class="feat-item">
+      <span class="feat-num">04</span>
+      <span class="feat-icon">⚽</span>
+      <h3>Sports Ground</h3>
+      <p>An open ground for cricket, football and athletics — because physical development is as important as academic achievement.</p>
+    </div>
+    <div class="feat-item">
+      <span class="feat-num">05</span>
+      <span class="feat-icon">🕌</span>
+      <h3>Prayer Facilities</h3>
+      <p>Dedicated space for daily prayers ensuring students maintain their spiritual practice and Islamic discipline throughout school.</p>
+    </div>
+    <div class="feat-item">
+      <span class="feat-num">06</span>
+      <span class="feat-icon">🆓</span>
+      <h3>Free Education</h3>
+      <p>As a government institution, education is provided free of charge — open to all boys in the community without any financial barrier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <div class="schedule-inner">
+    <div class="schedule-text reveal">
+      <span class="eyebrow">Daily Routine</span>
+      <h2>A Structured<br><em>Day of Learning</em></h2>
+      <p>Our daily timetable is carefully designed to balance academic subjects, prayer breaks and recreational activity — creating an environment where students can thrive holistically.</p>
+      <p>School operates <strong>six days a week</strong>, Monday through Saturday, from <strong>8:30 AM to 2:30 PM</strong>.</p>
+      <br>
+      <a href="#contact" class="btn-gold" style="display:inline-block; margin-top:0.5rem">Get Admission Info</a>
+    </div>
+    <div class="timetable reveal">
+      <div class="tt-header">
+        <h4>Sample Daily Timetable</h4>
+        <span class="tt-badge">Class 9 & 10</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">8:30 – 9:15</span>
+        <span class="tt-subject">Assembly & Quran Recitation</span>
+        <span class="tt-tag islamic">Islamic</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">9:15 – 10:00</span>
+        <span class="tt-subject">Mathematics</span>
+        <span class="tt-tag math">Maths</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">10:00 – 10:45</span>
+        <span class="tt-subject">English Language</span>
+        <span class="tt-tag lang">English</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">10:45 – 11:00</span>
+        <span class="tt-subject">Break</span>
+        <span class="tt-tag" style="background:#f0f0f0;color:#888">Break</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">11:00 – 11:45</span>
+        <span class="tt-subject">Physics / Chemistry</span>
+        <span class="tt-tag science">Science</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">11:45 – 12:30</span>
+        <span class="tt-subject">Urdu</span>
+        <span class="tt-tag urdu">Urdu</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">12:30 – 1:00</span>
+        <span class="tt-subject">Zuhr Prayer & Lunch</span>
+        <span class="tt-tag islamic">Islamic</span>
+      </div>
+      <div class="tt-row">
+        <span class="tt-time">1:00 – 2:30</span>
+        <span class="tt-subject">Social Studies / Pakistan Studies</span>
+        <span class="tt-tag social">Social</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <span class="eyebrow">School Life</span>
+  <h2>Life at <em>GBHSS Mithiani Campus</em></h2>
+  <div class="gallery-grid reveal">
+    <div class="gal-item span2">
+      <span>🏫</span>
+      <div class="gal-label">Our School Campus</div>
+    </div>
+    <div class="gal-item">
+      <span>📚</span>
+      <div class="gal-label">Classroom Learning</div>
+    </div>
+    <div class="gal-item">
+      <span>⚽</span>
+      <div class="gal-label">Sports & Athletics</div>
+    </div>
+    <div class="gal-item">
+      <span>🏆</span>
+      <div class="gal-label">Achievements & Awards</div>
+    </div>
+    <div class="gal-item">
+      <span>🎓</span>
+      <div class="gal-label">Graduation & Results</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="news-inner">
+    <div class="news-header reveal">
+      <div>
+        <span class="eyebrow">Latest Updates</span>
+        <h2>Announcements & <em>News</em></h2>
+      </div>
+      <a href="#contact" class="btn-gold">Contact School</a>
+    </div>
+    <div class="news-grid reveal">
+      <div class="news-card">
+        <div class="news-top">
+          <div>
+            <div class="news-date">15</div>
+            <div class="news-month">June 2026</div>
+          </div>
+          <span class="news-cat">Exams</span>
+        </div>
+        <div class="news-body">
+          <h4>Annual Examinations Begin</h4>
+          <p>Final examinations for all classes commence on June 15th. Students are advised to bring their admit cards and report 30 minutes early.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-top">
+          <div>
+            <div class="news-date">20</div>
+            <div class="news-month">June 2026</div>
+          </div>
+          <span class="news-cat">Sports</span>
+        </div>
+        <div class="news-body">
+          <h4>Annual Sports Day 2026</h4>
+          <p>The school's annual athletics meet will be held on the main ground. Students can register for cricket, football, 100m sprint and relay races.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-top" style="background: var(--gold);">
+          <div>
+            <div class="news-date" style="color:var(--dark)">01</div>
+            <div class="news-month" style="color:rgba(14,39,24,0.6)">Aug 2026</div>
+          </div>
+          <span class="news-cat" style="background:var(--green);color:#fff">Admissions</span>
+        </div>
+        <div class="news-body">
+          <h4>New Academic Session 2026–27</h4>
+          <p>Admissions are now open for the new session. Students seeking enrolment in Class 6 onwards may contact the school administration directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTTO STRIP -->
+<div class="motto">
+  <p class="motto-quote">"Seek knowledge from the cradle to the grave — Education is the most powerful weapon you can use to change the world."</p>
+  <span class="motto-attr">— The ethos of Government Boys' Higher Secondary School Mithiani, Campus</span>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-map">
+    <span class="eyebrow">Find Us</span>
+    <h2>Our Location &<br>Contact</h2>
+    <div class="info-item">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-label">Address</div>
+        <div class="info-val">VX9G+HG2, Mithiani<br>District Naushahro Feroze, Sindh<br>Pakistan</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">🏫</div>
+      <div>
+        <div class="info-label">Institution Type</div>
+        <div class="info-val">Government Secondary School<br>Board of Secondary Education, Sindh</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">📋</div>
+      <div>
+        <div class="info-label">Admissions</div>
+        <div class="info-val">Visit school administration office<br>Monday – Saturday, 8:30 AM – 2:00 PM</div>
+      </div>
+    </div>
+    <div class="map-btn">
+      <a href="https://maps.app.goo.gl/ZQodgsiMgMuiq3KG9" target="_blank" class="btn-gold">Open in Google Maps</a>
+    </div>
+  </div>
+  <div class="contact-hours">
+    <span class="eyebrow">School Hours</span>
+    <h2>When We're<br>Open</h2>
+    <div class="hours-table">
+      <div class="hr-row today">
+        <span class="hr-day">Monday <span class="today-badge">Today</span></span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day">Tuesday</span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day">Wednesday</span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day">Thursday</span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day">Friday</span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day">Saturday</span>
+        <span class="hr-time">8:30 AM – 2:30 PM</span>
+      </div>
+      <div class="hr-row">
+        <span class="hr-day closed">Sunday</span>
+        <span class="hr-time closed">Closed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Government Boys' Higher Secondary School Mithiani, Campus</h3>
+      <p>A government higher secondary school serving the community of Mithiani, Sindh with free, quality education and a commitment to building the next generation of Pakistan.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Academics</h4>
+      <ul>
+        <li><a href="#programs">Curriculum</a></li>
+        <li><a href="#schedule">Timetable</a></li>
+        <li><a href="#programs">Subjects</a></li>
+        <li><a href="#news">Examinations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>School Life</h4>
+      <ul>
+        <li><a href="#features">Facilities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#news">Sports</a></li>
+        <li><a href="#news">Events</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#about">About School</a></li>
+        <li><a href="#contact">Admissions</a></li>
+        <li><a href="#contact">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Government Boys' Higher Secondary School Mithiani, Campus. All rights reserved.</p>
+    <div class="footer-govt">
+      <div class="gov-dot"></div>
+      Government of Sindh — Education Department
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 10
+      ? '0 4px 30px rgba(26,107,60,0.15)'
+      : '0 2px 20px rgba(26,107,60,0.1)';
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mark today correctly
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hr-row').forEach(row => {
+    const dayEl = row.querySelector('.hr-day');
+    if (dayEl && dayEl.textContent.includes(today)) {
+      row.classList.add('today');
+      if (!dayEl.querySelector('.today-badge')) {
+        const badge = document.createElement('span');
+        badge.className = 'today-badge';
+        badge.textContent = 'Today';
+        dayEl.appendChild(badge);
+      }
+    } else {
+      row.classList.remove('today');
+    }
+  });
+</script>
+</body>
+</html>
